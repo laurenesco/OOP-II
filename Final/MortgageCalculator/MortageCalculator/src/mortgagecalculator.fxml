@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoanCalculatorController">
+   <children>
+      <VBox minWidth="-Infinity" prefHeight="200.0">
+         <HBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Loan Amount">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtAmount" alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </TextField>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Loan Term">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="( From 12 - 60 months )">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lblTermLength" alignment="CENTER" maxWidth="1.7976931348623157E308" text="36">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Slider fx:id="sldTerm" blockIncrement="6.0" max="60.0" min="12.0" value="36.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Slider>
+         </children>
+      </VBox>
+      <VBox minWidth="-Infinity" prefHeight="200.0">
+         <HBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Credit Rating">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <RadioButton fx:id="radExcellent" mnemonicParsing="false" onAction="#updateCreditRating" text="Excellent">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="creditRatingToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radGood" mnemonicParsing="false" onAction="#updateCreditRating" text="Good" toggleGroup="$creditRatingToggleGroup">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="radFair" mnemonicParsing="false" onAction="#updateCreditRating" text="Fair" toggleGroup="$creditRatingToggleGroup">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="radPoor" mnemonicParsing="false" onAction="#updateCreditRating" text="Poor" toggleGroup="$creditRatingToggleGroup">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </RadioButton>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Auto Pay">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <RadioButton fx:id="radYes" mnemonicParsing="false" onAction="#updatePayMethod" text="Yes">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="autoPayToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radNo" mnemonicParsing="false" onAction="#updatePayMethod" text="No" toggleGroup="$autoPayToggleGroup">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </VBox>
+      <VBox minWidth="-Infinity" prefHeight="200.0">
+         <HBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Interest Rate">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtInterest" alignment="CENTER" editable="false" focusTraversable="false">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </TextField>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Loan Payment">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtPayment" alignment="CENTER" editable="false" focusTraversable="false">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </TextField>
+            <Button fx:id="btnCalculatePayment" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculatePayment" text="Calculate Payment">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>
